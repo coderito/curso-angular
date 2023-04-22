@@ -10,6 +10,10 @@ import { ClasesComponent } from './clases/clases.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { BuclesComponent } from './bucles/bucles.component';
 import { SwitchComponent } from './switch/switch.component';
+import { FormularioplantillaComponent } from './formularioplantilla/formularioplantilla.component';
+
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,10 +24,12 @@ import { SwitchComponent } from './switch/switch.component';
     ClasesComponent,
     FormularioComponent,
     BuclesComponent,
-    SwitchComponent
+    SwitchComponent,
+    FormularioplantillaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
