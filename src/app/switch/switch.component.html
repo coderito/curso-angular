@@ -1,1 +1,17 @@
 <p>switch works!</p>
+
+<form action="">
+    <input type="text" placeholder="Ingrese un numero" #numeroDia>
+    <button (click)="cambiarDia(numeroDia.value, $event)">Cambiar</button>
+</form>
+
+<div [ngSwitch]="dia" class="pt-3">
+    <p *ngSwitchCase="1" [ngClass]="estilo" class="alert-primary">Lunes</p>
+    <p *ngSwitchCase="2" [ngClass]="estilo" class="alert-secondary">Martes</p>
+    <p *ngSwitchCase="3" [ngClass]="estilo" class="alert-success">Miercoles</p>
+    <p *ngSwitchCase="4" [ngClass]="estilo" class="alert alert-danger ">Jueves</p>
+    <p *ngSwitchCase="5" [ngClass]="estilo" class="alert alert-warning">Viernes</p>
+    <p *ngSwitchCase="6" [ngClass]="estilo" class="alert alert-info">Sabado</p>
+    <p *ngSwitchCase="7" [ngClass]="estilo" class="alert alert-dark">Domingo</p>
+    <p *ngSwitchDefault>No registra</p>
+</div>
