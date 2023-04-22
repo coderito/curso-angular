@@ -1,0 +1,35 @@
+<div class="container mt-3">
+  <p>formulario works!</p>
+  <input
+    type="text"
+    placeholder="Ingrese tu nombre"
+    class="form-control"
+    #nombre
+  />
+  <input
+    type="text"
+    placeholder="Ingrese su apellido"
+    class="form-control mt-2"
+    #apellido
+  />
+  <button
+    class="btn btn-primary mt-2"
+    (click)="mostrar_en_consola(nombre.value, apellido.value)"
+  >
+    Mostrar en consola
+  </button>
+
+  <div
+    class="alert alert-primary mt-2 d-flex justify-content-between align-items-center"
+    *ngIf="mostrarMensaje; else mensaje"
+  >
+    Nombre: {{ nombre.value }} Apellido: {{ apellido.value }}
+    <button class="btn btn-danger" (click)="cerrarMensaje()">Cerrar</button>
+  </div>
+</div>
+
+<ng-template #mensaje>
+    <div class="alert alert-danger">
+        Mensaje de prueba
+    </div>
+</ng-template>
