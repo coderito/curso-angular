@@ -1,0 +1,47 @@
+<div>
+  <button
+    [ngClass]="{
+      disabled: state
+    }"
+    class="btn btn-primary"
+    (click)="color = 'text-primary'"
+  >
+    Azul
+  </button>
+  <button
+    [ngClass]="{
+      disabled: state
+    }"
+    class="btn btn-danger"
+    (click)="color = 'text-danger'"
+  >
+    Rojo
+  </button>
+  <button
+    [ngClass]="{
+      disabled: state
+    }"
+    class="btn btn-success"
+    (click)="color = 'text-success'"
+  >
+    Verde
+  </button>
+  <p [class]="color">{{ texto }}</p>
+
+  <button (click)="state = !state" class="btn btn-primary">
+    Activar / Desactivar
+  </button>
+
+  <h2>Practicando</h2>
+  <button
+    [ngClass]="{
+      disabled: state2
+    }"
+    (click)="color2 = 'text-primary'"
+    class="btn btn-primary"
+  >
+    Azul
+  </button>
+  <p [class]="color2">A</p>
+  <button (click)="state2 = !state2">Ac / Ds</button>
+</div>
