@@ -1,6 +1,6 @@
 <p>formularioplantilla works!</p>
 
-<form (ngSubmit)="procesarFormulario()">
+<form (ngSubmit)="procesarFormulario()" #formContact="ngForm">
   <div class="form-group">
     <label for="nombre">Nombre</label>
     <input
@@ -11,8 +11,13 @@
       aria-describedby="emailHelp"
       placeholder="Ingrese nombre"
       [(ngModel)]="persona.nombre"
+      required
+      #nombre="ngModel"
     />
   </div>
+
+  <div class="alert alert-danger mt-2" [hidden]="nombre.valid || nombre.pristine">Valor obligatorio</div>
+
   <div class="form-group">
     <label for="edad">Edad</label>
     <input
@@ -22,7 +27,10 @@
       id="edad"
       placeholder="Ingrese edad"
       [(ngModel)]="persona.edad"
+      required
+      #edad="ngModel"
     />
   </div>
-  <button type="submit" class="btn btn-primary mt-1">Submit</button>
+  <div class="alert alert-danger mt-2" [hidden]="edad.valid || edad.pristine">Valor obligatorio</div>
+  <button type="submit" class="btn btn-primary mt-1" [disabled]="!formContact.valid">Submit</button>
 </form>
