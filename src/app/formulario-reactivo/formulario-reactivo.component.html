@@ -1,0 +1,25 @@
+<p>formulario-reactivo works!</p>
+
+<form class="container mt-3">
+    <p>formulario works!</p>
+    <input
+      type="text"
+      placeholder="Ingrese tu nombre"
+      class="form-control"
+      [formControl]="nombre"
+    />
+    <input
+      type="text"
+      placeholder="Ingrese tu email"
+      class="form-control mt-2"
+      [formControl]="correo"
+    />
+    <button
+      class="btn btn-primary mt-2"
+    >
+      Enviar
+    </button>
+</form>
+
+{{nombre.value}}
+{{correo.value}}
